@@ -115,7 +115,7 @@ class MovieWidget extends StatelessWidget {
 
   Widget movieInfo(context) {
     return Container(
-      height: 150,
+      constraints: BoxConstraints(minHeight: 150),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,

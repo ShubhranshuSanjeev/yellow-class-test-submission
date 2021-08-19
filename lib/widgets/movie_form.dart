@@ -188,7 +188,11 @@ class _MovieFormState extends State<MovieForm> {
         if (value!.isEmpty) {
           return "Director cannot be empty";
         }
+        if (value.length > 25) {
+          return "Movie Name should be less than 25 characters";
+        }
       },
+      maxLength: 25,
     );
   }
 
