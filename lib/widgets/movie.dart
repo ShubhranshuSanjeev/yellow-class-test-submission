@@ -43,7 +43,13 @@ class MovieWidget extends StatelessWidget {
               height: 150,
               alignment: Alignment.topLeft,
             )
-          : Image.asset('assets/images/movie.png'),
+          : Image.asset(
+              'assets/images/popcorn.png',
+              height: 150,
+              width: 100,
+              fit: BoxFit.contain,
+              alignment: Alignment.center,
+            ),
     );
   }
 

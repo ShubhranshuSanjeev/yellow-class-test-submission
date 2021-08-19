@@ -17,9 +17,6 @@ class _HomePageState extends State<HomePage> {
   void getData() async {
     if (widget.movieProvider != null) {
       List<Movie> _movies = await widget.movieProvider!.getMovies();
-      _movies.forEach((movie) {
-        print('${movie.name} ${movie.director} ${movie.id}');
-      });
       setState(() {
         movies = _movies;
       });
@@ -50,8 +47,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("Build");
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Movie Tracker"),
