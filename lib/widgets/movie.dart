@@ -114,22 +114,30 @@ class MovieWidget extends StatelessWidget {
   }
 
   Widget movieInfo(context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          child: Text(
-            movie.name as String,
-            style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.bold),
+    return Container(
+      height: 150,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  movie.name as String,
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Director: ${movie.director as String}',
+                  style: TextStyle(fontSize: 16.0),
+                ),
+              ],
+            ),
           ),
-        ),
-        Text(
-          'Director: ${movie.director as String}',
-          style: TextStyle(fontSize: 16.0),
-        ),
-        SizedBox(height: 30.0),
-        actionButtons(context),
-      ],
+          actionButtons(context),
+        ],
+      ),
     );
   }
 
@@ -154,9 +162,7 @@ class MovieWidget extends StatelessWidget {
         ],
         color: Colors.white,
       ),
-      padding: EdgeInsets.only(
-        right: 20,
-      ),
+      padding: EdgeInsets.only(right: 20),
       margin: EdgeInsets.only(bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
