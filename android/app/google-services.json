@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82335234505",
+    "project_id": "yc-movie-tracker",
+    "storage_bucket": "yc-movie-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82335234505:android:93494aeebc82f49080d018",
+        "android_client_info": {
+          "package_name": "com.shubhranshu.movie_tracker_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82335234505-su7c1b43gp0h4aksddkl5p0d90nvvnbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2nlTdSj4Z2zWyhh-1Dq3g4KHF1cXk0_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82335234505-su7c1b43gp0h4aksddkl5p0d90nvvnbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

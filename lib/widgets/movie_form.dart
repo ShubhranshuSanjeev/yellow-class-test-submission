@@ -199,6 +199,7 @@ class _MovieFormState extends State<MovieForm> {
   Widget submitButton(BuildContext context) {
     return Material(
       color: Colors.deepPurple,
+      borderRadius: BorderRadius.circular(8),
       child: InkWell(
         onTap: () => onSubmit(context),
         child: AnimatedContainer(

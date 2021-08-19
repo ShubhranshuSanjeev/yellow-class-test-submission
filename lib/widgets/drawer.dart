@@ -1,21 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_tracker_application/models/custom_user.dart';
+import 'package:movie_tracker_application/services/auth.dart';
 import 'package:movie_tracker_application/utils/routes.dart';
+import 'package:provider/provider.dart';
 
-class MyDrawer extends StatelessWidget {
+class DrawerWidget extends StatelessWidget {
   final Function callback;
-  const MyDrawer({Key? key, required this.callback}) : super(key: key);
 
-  Widget drawerHeader() {
+  final AuthService _auth = AuthService();
+  DrawerWidget({Key? key, required this.callback}) : super(key: key);
+
+  Widget drawerHeader(user) {
     return DrawerHeader(
       padding: EdgeInsets.zero,
       child: UserAccountsDrawerHeader(
         margin: EdgeInsets.zero,
-        accountName: Text("Shubhranshu Sanjeev"),
-        accountEmail: Text("shubhranshu.lumia@gmail.com"),
+        accountName: Text(user == null ? 'Anonymous User' : user.uid),
+        accountEmail: Text(user == null ? 'N\\A' : user.email),
         currentAccountPicture: CircleAvatar(
-          backgroundImage: NetworkImage(
-              "https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"),
+          backgroundImage: AssetImage('assets/images/avatar.jpg'),
         ),
       ),
     );
@@ -57,7 +61,7 @@ class MyDrawer extends StatelessWidget {
     );
   }
 
-  Widget signOutButton() {
+  Widget drawerButton(context, user) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 65),
       child: Material(
@@ -67,14 +71,20 @@ class MyDrawer extends StatelessWidget {
         child: InkWell(
           focusColor: Colors.black,
           borderRadius: BorderRadius.circular(50),
-          onTap: () {},
+          onTap: () {
+            if (user == null) {
+              Navigator.pushNamed(context, AppRoutes.loginRoute);
+            } else {
+              _auth.signOut();
+            }
+          },
           child: AnimatedContainer(
             duration: Duration(milliseconds: 500),
             width: 100,
             height: 50,
             alignment: Alignment.center,
             child: Text(
-              "Sign out",
+              user == null ? "Login" : "Sign out",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -88,19 +98,21 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<CustomUser?>(context);
+
     return Drawer(
       child: Container(
         color: Colors.deepPurple,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            drawerHeader(),
+            drawerHeader(user),
             homeTile(context),
             addMovieTile(context),
             SizedBox(
               height: 50,
             ),
-            signOutButton(),
+            drawerButton(context, user),
           ],
         ),
       ),

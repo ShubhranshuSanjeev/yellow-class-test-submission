@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
-      drawer: MyDrawer(callback: refereshData),
+      drawer: DrawerWidget(callback: refereshData),
     );
   }
 }
