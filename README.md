@@ -1,16 +1,21 @@
 # movie_tracker_application
 
-A new Flutter project.
+Yellow Class campus hiring test submission
 
-## Getting Started
+## Using the application
 
-This project is a starting point for a Flutter application.
+APK Link: https://drive.google.com/file/d/1IVIYdyy2tYjSdIPpIVqeU_aSRgqX-UZc/view?usp=sharing
 
-A few resources to get you started if this is your first Flutter project:
+## Test User Credentials
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+**Email** : test_user@mail.com
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Password**: abc123
+
+## Application Screenshots
+
+<img src="./screenshots/5.jpg" alt="drawing" width="200"/>
+<img src="./screenshots/2.jpg" alt="drawing" width="200"/>
+<img src="./screenshots/1.jpg" alt="drawing" width="200"/>
+<img src="./screenshots/6.jpg" alt="drawing" width="200"/>
+<img src="./screenshots/4.jpg" alt="drawing" width="200"/>
